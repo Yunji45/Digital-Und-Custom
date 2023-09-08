@@ -30,6 +30,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
     <link rel="stylesheet" href="./css/app.css">
+    <style>
+        .col-12.card-body {
+            display: none;
+            opacity: 0; /* Opasitas awal adalah 0 */
+            transition: opacity 0.5s ease-in-out; /* Efek transisi */
+        }
+        .show-card {
+            opacity: 1; /* Opasitas menjadi 1 saat elemen ditampilkan */
+        }
+    </style>
+
 </head>
 
 <body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id">
@@ -182,7 +193,7 @@
                     </div>
 
                     <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
-                        <a href="https://goo.gl/maps/LQifRqggzB8ARF4V6" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
+                        <a href="https://maps.app.goo.gl/8AZ4vEXN71BsWCKp8" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
                             <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
                         </a>
                         <p class="mb-0 mt-1 mx-1 pb-4" style="font-size: 0.9rem;">
@@ -214,6 +225,7 @@
                         dapat melalui :
                     </p>
 
+
                     <div class="overflow-x-hidden">
                         <div class="row justify-content-center">
 
@@ -227,7 +239,23 @@
                                 </p>
                                 <button class="btn btn-light btn-sm rounded-4" data-nomer="402201013773535" onclick="salin(this)" autofocus>Salin No. Rekening</button>
                             </div>
+                            <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/640px-Logo_dana_blue.svg.png" class="img-fluid rounded" width="150" alt="bri">
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">
+                                    No. Rekening 082321016999
+                                </p>
+                                <p class="card-text" style="font-size: 0.9rem;">
+                                    a.n ATI KUSTIATI
+                                </p>
+                                <button class="btn btn-light btn-sm rounded-4" data-nomer="082321016999" onclick="salin(this)" autofocus>Salin No. Rekening</button>
+                            </div>
+
                         </div>
+
+                        <button class="btn btn-secondary btn-sm rounded-4" onclick="toggleElements()">
+                            <i class="fa fa-gift"></i> Love Gift <!-- Ikon kado ditambahkan di sini -->
+                        </button>
+                        
                     </div>
                 </div>
             </div>
@@ -367,6 +395,22 @@
         // Panggil fungsi untuk menghitung waktu saat halaman dimuat
         window.onload = hitungWaktu;
       </script>
+      <script>
+        function toggleElements() {
+            var elementsToToggle = document.querySelectorAll('.col-12.card-body');
+        
+            elementsToToggle.forEach(function(element) {
+                if (element.style.display === 'none' || element.style.display === '') {
+                    element.style.display = 'block';
+                    element.classList.add('show-card'); // Tambahkan class untuk efek transisi
+                } else {
+                    element.style.display = 'none';
+                    element.classList.remove('show-card'); // Hapus class untuk efek transisi
+                }
+            });
+        }
+                </script>
+        
       
 </body>
 
